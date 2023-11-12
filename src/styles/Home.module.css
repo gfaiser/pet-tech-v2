@@ -1,0 +1,213 @@
+.content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-size: cover;
+}
+
+.content_title {   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content_main {
+    width: 480px;
+    min-height: 300px;
+    position: relative;
+}
+
+div.circle_desc {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    text-decoration: none;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29); */
+    /* border-bottom: solid 3px #666; */
+    transition: .4s;
+    box-shadow: 1px 1px 1px #666,
+        1px 1px 1px #666,
+        1px 1px 1px #666,
+        1px 1px 1px #666,
+        1px 1px 1px #666,
+        1px 1px 1px #666,
+        1px 1px 1px #666,
+        1px 1px 1px #666,
+        1px 1px 1px #666,
+        1px 1px 1px #666,
+        1px 5px 6px rgba(16, 16, 16, .4),
+        1px 5px 10px rgba(16, 16, 16, .2),
+        1px 5px 35px rgba(16, 16, 16, .2),
+        1px 5px 60px rgba(16, 16, 16, .2);
+}
+
+.circle:hover {
+    transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.circle_1 {
+    width: 300px;
+    min-height: 300px;
+    top: 0;
+    left: -50px;
+    background-image: linear-gradient(45deg, rgba(195, 180, 223, .7) 0, rgba(192, 171, 230, .7) 50%);
+    z-index: 4;
+}
+
+.circle_2 {
+    width: 240px;
+    min-height: 240px;
+    left: -270px;
+    top: 30px;
+    background-color: rgba(45, 146, 200, .7);
+}
+
+.circle_3 {
+    width: 220px;
+    min-height: 220px;
+    top: -140px;
+    left: -162px;
+    background-color: rgba(160, 224, 163, .7);
+}
+
+.circle_4 {
+    width: 220px;
+    min-height: 220px;
+    bottom: -140px;
+    left: -162px;
+    background-color: rgba(199, 187, 227, .7);
+}
+
+.circle_5 {
+    width: 300px;
+    min-height: 300px;
+    top: 0;
+    right: -50px;
+    /* background-color: #91cfda; */
+    background-image: linear-gradient(45deg, rgba(145, 207, 218, .7) 0, rgba(124, 204, 218, .7) 50%);
+    z-index: 5;
+}
+
+.circle_6 {
+    width: 240px;
+    min-height: 240px;
+    right: -270px;
+    top: 30px;
+    background-color: rgba(182, 82, 94, .7)
+}
+
+.circle_7 {
+    width: 220px;
+    min-height: 220px;
+    top: -140px;
+    right: -162px;
+    background-color: rgba(142, 143, 234, .7)
+}
+
+.circle_8 {
+    width: 220px;
+    min-height: 220px;
+    bottom: -140px;
+    right: -162px;
+    background-color: rgba(79, 177, 128, .7);
+}
+
+.circle_9 {
+    width: 220px;
+    min-height: 220px;
+    bottom: -220px;
+    right: 130px;
+    background-color: rgba(79, 177, 128, 0.7);
+}
+
+@media (max-width: 700px) {
+    .content {
+        padding: 0 16px;
+        padding-bottom: 16px;
+    }
+
+    .content_main {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .content_title {
+        margin: 20px 0;
+    }
+
+    .circle {
+        position: initial;
+        padding: 0 2px;
+    }
+
+    .circle_1 {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 0;
+    }
+
+    .circle_2 {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 0;
+    }
+
+    .circle_3 {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 0;
+    }
+
+    .circle_4 {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 0;
+    }
+
+    .circle_5 {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 0;
+    }
+
+    .circle_6 {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 0;
+    }
+
+    .circle_7 {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 0;
+    }
+
+    .circle_8 {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 0;
+    }
+
+}

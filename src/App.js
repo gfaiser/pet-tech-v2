@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CssBaseline from '@mui/material/CssBaseline';
+
+import Master from './components/Master';
+import Home from './components/Home';
+// import Page404 from './components/Page404';
+import Elderly from './pages/Elderly'
+import Cats from './pages/Cats'
+import Contact from './pages/Contact'
+import Hospitals from "./pages/Hospitals"
+import PetsShop from "./pages/PetsShop"
+import Purchase from "./pages/Purchase"
+import Volunteer from "./pages/Volunteer"
+import PageNotFound from './components/Page404'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <CssBaseline />
+      <Routes>
+        <>
+          <Route path="/" element={<Home />} />
+          <Route path="/pg" element={<Master />}>
+            <Route path="elderly" element={<Elderly />} />
+            <Route path="cats" element={<Cats />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="hospitals" element={<Hospitals />} />
+            <Route path="pets-shop" element={<PetsShop />} />
+            <Route path="purchase" element={<Purchase />} />
+            <Route path="volunteer" element={<Volunteer />} />
+          </Route>
+          <Route path="*" element={<PageNotFound />} />
+        </>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
