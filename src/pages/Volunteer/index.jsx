@@ -169,7 +169,7 @@ export default function BasicTabs() {
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Grid
               component={Button}
-              variant="outlined"
+              variant={value === 0 ? "contained" : "outlined"}
               onClick={(evt) => handleChangeTab(evt, 0)}
               style={{ flexDirection: "column" }}
             >
@@ -180,7 +180,7 @@ export default function BasicTabs() {
             </Grid>
             <Grid
               component={Button}
-              variant="outlined"
+              variant={value === 1 ? "contained" : "outlined"}
               onClick={(evt) => handleChangeTab(evt, 1)}
               style={{ flexDirection: "column" }}
             >
