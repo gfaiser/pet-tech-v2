@@ -107,7 +107,7 @@ export default function BasicTabs() {
         }}
       >
         <Box sx={{ textAlign: "center", marginBottom: "32px" }}>
-          <Typography variant="h4">Veterinário e Voluntário</Typography>
+          <Typography variant="h4">Veterinários(as) e Pacientes</Typography>
           <Typography variant="h6">Escolha uma opção:</Typography>
         </Box>
 
