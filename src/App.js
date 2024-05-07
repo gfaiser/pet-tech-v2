@@ -3,7 +3,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import Master from './components/Master';
 import Home from './components/Home';
-// import Page404 from './components/Page404';
 import Elderly from './pages/Elderly'
 import Cats from './pages/Cats'
 import Contact from './pages/Contact'
@@ -11,6 +10,7 @@ import Hospitals from "./pages/Hospitals"
 import PetsShop from "./pages/PetsShop"
 import Purchase from "./pages/Purchase"
 import Volunteer from "./pages/Volunteer"
+import Zoonoses from "./pages/Zoonoses"
 import PageNotFound from './components/Page404'
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
             <Route path="pets-shop" element={<PetsShop />} />
             <Route path="purchase" element={<Purchase />} />
             <Route path="volunteer" element={<Volunteer />} />
+            <Route path="zoonoses" element={<Zoonoses />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </>

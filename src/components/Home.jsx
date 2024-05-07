@@ -3,22 +3,11 @@ import styles from "../styles/Home.module.css";
 import Typography from "@mui/material/Typography";
 
 const textShadow = {
-  color: "white",
-  fontWeight: 700,
-  textShadow: `1px 1px 1px #666,
-  1px 1px 1px #666,
-  1px 1px 1px #666,
-  1px 1px 1px #666,
-  1px 1px 1px #666,
-  1px 1px 1px #666,
-  1px 1px 1px #666,
-  1px 1px 1px #666,
-  1px 1px 1px #666,
-  1px 1px 1px #666,
-  1px 5px 6px rgba(16, 16, 16, .4),
-  1px 5px 10px rgba(16, 16, 16, .2),
-  1px 5px 35px rgba(16, 16, 16, .2),
-  1px 5px 60px rgba(16, 16, 16, .2)`,
+  color: "black",
+  fontSize: 32,
+  fontFamily: '"Chewy", system-ui',
+  fontWeight: 400,
+  fontStyle: 'normal'
 };
 
 const Content = ({ title = "", desc = "" }) => {
@@ -29,7 +18,7 @@ const Content = ({ title = "", desc = "" }) => {
           {title}
         </Typography>
       </div>
-      <Typography variant="body2" style={{ ...textShadow, fontWeight: 400 }}>
+      <Typography variant="body2" style={{ fontWeight: 400, fontSize: 18, color: "black" }}>
         {desc}
       </Typography>
     </div>
@@ -43,10 +32,7 @@ function Home() {
       style={{ backgroundImage: "url(/assets/backgraound.jpg)" }}
     >
       <div className={styles.content_title}>
-        <img src="/assets/logo.png" width={300} alt="logo" />
-        <Typography variant="h3" style={{ ...textShadow, marginBottom: 32 }}>
-          Idosos & Gatos
-        </Typography>
+        <img src="/assets/home1.png" width={800} alt="logo" style={{ marginBottom: 32, marginTop: 32 }} />
       </div>
       <main className={styles.content_main}>
         <Link to="pg/elderly" className={`${styles.circle} ${styles.circle_1}`}>
@@ -96,6 +82,12 @@ function Home() {
           className={`${styles.circle} ${styles.circle_9}`}
         >
           <Content title="Veterinário Voluntario" desc="Agenda" />
+        </Link>
+        <Link
+          to="pg/zoonoses"
+          className={`${styles.circle} ${styles.circle_10}`}
+        >
+          <Content title="Controle de zoonoses" desc="Chips & Tags" />
         </Link>
       </main>
     </div>
