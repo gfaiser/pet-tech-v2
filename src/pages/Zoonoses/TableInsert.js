@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { toast } from 'react-toastify';
 import { alpha } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -15,7 +16,8 @@ export default function TableInsert({ handleDataTable }) {
         race: '',
         sex: '',
         tutor: '',
-        chip: ''
+        chip: '',
+        veterinary: 'Dr. Marcio'
     })
 
     const changeFields = (evt) => {
@@ -26,6 +28,24 @@ export default function TableInsert({ handleDataTable }) {
     const submit = useCallback((evt) => {
         evt.preventDefault()
         handleDataTable(state)
+        setState({
+            name: '',
+            species: '',
+            race: '',
+            sex: '',
+            tutor: '',
+            chip: '',
+            veterinary: 'Dr. Marcio'
+        },toast.success('Salvo com sucesso!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        }))
     }, [state])
 
     return (
@@ -145,6 +165,7 @@ export default function TableInsert({ handleDataTable }) {
                                             name="chip"
                                             onChange={changeFields}
                                             value={state.chip}
+                                            type='number'
                                         />
                                     </Grid>
                                 </Grid>
@@ -156,13 +177,6 @@ export default function TableInsert({ handleDataTable }) {
                                 >
                                     Enviar
                                 </Button>
-                                <Grid container justifyContent="flex-end">
-                                    <Grid item>
-                                        <Link href="#" variant="body2">
-                                            Você não tem acesso? Entre aqui
-                                        </Link>
-                                    </Grid>
-                                </Grid>
                             </Box>
                         </Box>
                     </div>

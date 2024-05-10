@@ -13,14 +13,8 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
-export default function Orders({ dataTable = [] }) {
-    if (dataTable.length === 0) {
-        return (
-            <div style={{ display: 'flex', justifyContent: 'center', padding: '5%' }}>
-                <Alert severity="info">Sem dados para mostrar.</Alert>
-            </div>
-        )
-    }
+export default function Orders({ dataTable = [], handleFiltro }) {
+    const [numberChip, setNumberChip] = React.useState('')
     const headers = ['Nome', 'Espécie', 'Raça', 'Sexo', 'Tutor(a)', 'Número do chip', 'Veterinário(a)']
     return (
         <React.Fragment>
@@ -29,8 +23,8 @@ export default function Orders({ dataTable = [] }) {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    pt: { xs: 14, sm: 20 },
-                    pb: { xs: 8, sm: 12 },
+                    pt: { xs: 4, sm: 4 },
+                    pb: { xs: 4, sm: 4 },
                 }}
             >
                 <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
@@ -55,13 +49,7 @@ export default function Orders({ dataTable = [] }) {
                         tailored to your needs. Elevate your experience with top-tier features
                         and services.
                     </Typography>
-                    <Stack
-                        direction={{ xs: 'column', sm: 'row' }}
-                        alignSelf="center"
-                        spacing={1}
-                        useFlexGap
-                        sx={{ pt: 2, width: { xs: '100%', sm: '100%' } }}
-                    >
+                    <Stack style={{ display: "flex", flexDirection: "row", gap: 8 }}>
                         <TextField
                             id="outlined-basic"
                             hiddenLabel
@@ -75,9 +63,16 @@ export default function Orders({ dataTable = [] }) {
                             }}
                             type='number'
                             fullWidth
+                            onChange={evt => setNumberChip(evt.target.value)}
+                            value={numberChip}
                         />
-                        <Button variant="contained" color="primary">
+                        <Button variant="contained" color="primary" onClick={() => handleFiltro(numberChip)}>
                             Buscar
+                        </Button>
+                        <Button variant="outlined" color="secondary" onClick={() => {
+                            setNumberChip('', handleFiltro(null, true))
+                        }}>
+                            Limpar
                         </Button>
                     </Stack>
                 </Stack>
@@ -115,19 +110,25 @@ export default function Orders({ dataTable = [] }) {
                                     }
                                 </TableRow>
                             </TableHead>
-                            <TableBody>
-                                {dataTable.map((row) => (
-                                    <TableRow key={row.name}>
-                                        <TableCell>{row.name}</TableCell>
-                                        <TableCell>{row.species}</TableCell>
-                                        <TableCell>{row.race}</TableCell>
-                                        <TableCell>{row.sex}</TableCell>
-                                        <TableCell>{row.tutor}</TableCell>
-                                        <TableCell>{row.chip}</TableCell>
-                                        <TableCell>{row.veterinary}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
+                            {dataTable.length === 0 ? (
+                                <div style={{ display: 'flex', justifyContent: 'center', padding: '5%', width: '100%' }}>
+                                    <Alert severity="info">Sem dados para mostrar.</Alert>
+                                </div>
+                            ) : (
+                                <TableBody>
+                                    {dataTable.map((row) => (
+                                        <TableRow key={row.name}>
+                                            <TableCell>{row.name}</TableCell>
+                                            <TableCell>{row.species}</TableCell>
+                                            <TableCell>{row.race}</TableCell>
+                                            <TableCell>{row.sex}</TableCell>
+                                            <TableCell>{row.tutor}</TableCell>
+                                            <TableCell>{row.chip}</TableCell>
+                                            <TableCell>{row.veterinary}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            )}
                         </Table>
                     </div>
                 </Box>
