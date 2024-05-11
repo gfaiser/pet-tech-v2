@@ -17,7 +17,10 @@ export default function TableInsert({ handleDataTable }) {
         sex: '',
         tutor: '',
         chip: '',
-        veterinary: 'Dr. Marcio'
+        veterinary: 'Dr. Marcio',
+        illnesses: '',
+        address: '',
+        image: '',
     })
 
     const changeFields = (evt) => {
@@ -35,8 +38,11 @@ export default function TableInsert({ handleDataTable }) {
             sex: '',
             tutor: '',
             chip: '',
-            veterinary: 'Dr. Marcio'
-        },toast.success('Salvo com sucesso!', {
+            veterinary: 'Dr. Marcio',
+            illnesses: '',
+            address: '',
+            image: ''
+        }, toast.success('Salvo com sucesso!', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -62,7 +68,6 @@ export default function TableInsert({ handleDataTable }) {
                     sx={(theme) => ({
                         mt: { xs: 8, sm: 10 },
                         alignSelf: 'center',
-                        height: { xs: 200, sm: 700 },
                         width: '100%',
                         backgroundImage:
                             theme.palette.mode === 'light'
@@ -87,9 +92,7 @@ export default function TableInsert({ handleDataTable }) {
                             color="text.secondary"
                             sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' } }}
                         >
-                            Explore our cutting-edge dashboard, delivering high-quality solutions
-                            tailored to your needs. Elevate your experience with top-tier features
-                            and services.
+                            Inserir cadastro novo
                         </Typography>
                         <Box
                             sx={{
@@ -166,6 +169,38 @@ export default function TableInsert({ handleDataTable }) {
                                             onChange={changeFields}
                                             value={state.chip}
                                             type='number'
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            fullWidth
+                                            id="image"
+                                            label="Link da imagem"
+                                            name="image"
+                                            onChange={changeFields}
+                                            value={state.image}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            fullWidth
+                                            id="illnesses"
+                                            label="Doenças"
+                                            name="illnesses"
+                                            onChange={changeFields}
+                                            value={state.illnesses}
+                                            multiline
+                                            rows={8}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            fullWidth
+                                            id="address"
+                                            label="Endereço"
+                                            name="address"
+                                            onChange={changeFields}
+                                            value={state.address}
                                         />
                                     </Grid>
                                 </Grid>
