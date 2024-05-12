@@ -29,7 +29,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
-      <span>Projeto integrador v2</span> {new Date().getFullYear()}
+      <span>Projeto integrador v3</span> {new Date().getFullYear()}
       {"."}
     </Typography>
   );
@@ -55,7 +55,7 @@ function ResponsiveAppBar() {
               to="/"
               style={{ display: "flex", color: "black", alignItems: "center" }}
             >
-              <Avatar
+              {/* <Avatar
                 alt="Remy Sharp"
                 src="/assets/logo.png"
                 sx={{
@@ -63,7 +63,7 @@ function ResponsiveAppBar() {
                   width: 56,
                   height: 56,
                 }}
-              />
+              /> */}
               <Typography
                 variant="h6"
                 noWrap

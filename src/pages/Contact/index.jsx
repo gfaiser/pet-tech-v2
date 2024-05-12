@@ -17,10 +17,12 @@ export default function SignUp() {
   const teamMembers = [
     "Fabiola Tagliatti",
     "Gilson Fais",
-    "Ivan Zegales",
-    "Lucas Koji",
-    "Marco Antonio",
-    "Lucas Reis",
+    "Ivan Zegales Laura",
+    "Marco Antonio Oliveira Filho",
+    "Lucas Koji Kaeriyama",
+    "Eduardo Adriani Aro Garcia",
+    "Eduardo Santino Campos",
+    "Islas Claudia Silva dos Santos Neves"
   ].sort();
 
   return (
