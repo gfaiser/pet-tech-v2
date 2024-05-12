@@ -3,11 +3,25 @@ import styles from "../styles/Home.module.css";
 import Typography from "@mui/material/Typography";
 
 const textShadow = {
-  color: "black",
   fontSize: 32,
   fontFamily: '"Chewy", system-ui',
   fontWeight: 400,
-  fontStyle: 'normal'
+  fontStyle: 'normal',
+  color: "white",
+  textShadow: `1px 1px 1px #666,
+1px 1px 1px #666,
+1px 1px 1px #666,
+1px 1px 1px #666,
+1px 1px 1px #666,
+1px 1px 1px #666,
+1px 1px 1px #666,
+1px 1px 1px #666,
+1px 1px 1px #666,
+1px 1px 1px #666,
+1px 5px 6px rgba(16, 16, 16, .4),
+1px 5px 10px rgba(16, 16, 16, .2),
+1px 5px 35px rgba(16, 16, 16, .2),
+1px 5px 60px rgba(16, 16, 16, .2)`
 };
 
 const Content = ({ title = "", desc = "" }) => {
@@ -32,7 +46,10 @@ function Home() {
       style={{ backgroundImage: "url(/assets/backgraound.jpg)" }}
     >
       <div className={styles.content_title}>
-        <img src="/assets/home1.png" width={800} alt="logo" style={{ marginBottom: 32, marginTop: 32 }} />
+        <img src="/assets/logo.png" width={300} alt="logo" />
+        <Typography variant='h3' style={{ ...textShadow, marginBottom: 32 }}>
+          Idosos & Gatos
+        </Typography>
       </div>
       <main className={styles.content_main}>
         <Link to="pg/elderly" className={`${styles.circle} ${styles.circle_1}`}>
