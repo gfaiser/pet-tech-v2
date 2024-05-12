@@ -82,7 +82,7 @@ export default function BasicModal({ open, handleClose, submitLogin }) {
                             <Grid container justifyContent="flex-end">
                                 <Grid item>
                                     <Link href="#" variant="body2">
-                                        Already have an account? Sign in
+                                        já tem uma conta? Entrar
                                     </Link>
                                 </Grid>
                             </Grid>

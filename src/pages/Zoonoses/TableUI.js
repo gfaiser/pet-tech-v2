@@ -23,7 +23,7 @@ export default function Orders({ dataTable = [], handleFiltro, basic = false }) 
         : ['Nome', 'Espécie', 'Raça', 'Sexo', 'Tutor(a)', 'Número do chip', 'Veterinário(a)' , 'Doenças', 'Endereço']
 
     const data = dataTable.find(i => i.chip === numberChip)
-
+   
     if (!basic) {
         return (
             <Container
@@ -46,7 +46,7 @@ export default function Orders({ dataTable = [], handleFiltro, basic = false }) 
                             fontSize: 'clamp(3.5rem, 10vw, 4rem)',
                         }}
                     >
-                        Bem vindo, digite o numero do chip para consultar
+                        Bem-vindo, digite o número do chip para consultar
                     </Typography>
 
                     <Stack style={{ display: "flex", flexDirection: "row", gap: 8 }}>
@@ -56,10 +56,10 @@ export default function Orders({ dataTable = [], handleFiltro, basic = false }) 
                             size="small"
                             variant="outlined"
                             aria-label="Codigo do chip"
-                            placeholder="Insira o numero do chip"
+                            placeholder="Insira o número do chip"
                             inputProps={{
                                 autoComplete: 'off',
-                                'aria-label': 'Insira o numero do chip',
+                                'aria-label': 'Insira o número do chip',
                             }}
                             type='number'
                             fullWidth
@@ -115,7 +115,7 @@ export default function Orders({ dataTable = [], handleFiltro, basic = false }) 
             </Container>
         )
     }
-
+    
     return (
         <React.Fragment>
             <Container
@@ -123,53 +123,10 @@ export default function Orders({ dataTable = [], handleFiltro, basic = false }) 
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    pt: { xs: 4, sm: 4 },
                     pb: { xs: 4, sm: 4 },
                 }}
             >
-                <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
-                    <Typography
-                        variant="h1"
-                        sx={{
-                            display: 'flex',
-                            flexDirection: { xs: 'column', md: 'row' },
-                            alignSelf: 'center',
-                            textAlign: 'center',
-                            fontSize: 'clamp(3.5rem, 10vw, 4rem)',
-                        }}
-                    >
-                        {basic
-                            ? 'Tabela com todos os chips cadastrados'
-                            : 'Bem vindo, digite o numero do chip para consultar'}
-                    </Typography>
-
-                    <Stack style={{ display: "flex", flexDirection: "row", gap: 8 }}>
-                        <TextField
-                            id="outlined-basic"
-                            hiddenLabel
-                            size="small"
-                            variant="outlined"
-                            aria-label="Codigo do chip"
-                            placeholder="Insira o numero do chip"
-                            inputProps={{
-                                autoComplete: 'off',
-                                'aria-label': 'Insira o numero do chip',
-                            }}
-                            type='number'
-                            fullWidth
-                            onChange={evt => setNumberChip(evt.target.value)}
-                            value={numberChip}
-                        />
-                        <Button variant="contained" color="primary" onClick={() => handleFiltro(numberChip)}>
-                            Buscar
-                        </Button>
-                        <Button variant="outlined" color="secondary" onClick={() => {
-                            setNumberChip('', handleFiltro(null, true))
-                        }}>
-                            Limpar
-                        </Button>
-                    </Stack>
-                </Stack>
+               
                 <Box
                     id="image"
                     sx={(theme) => ({
@@ -194,8 +151,7 @@ export default function Orders({ dataTable = [], handleFiltro, basic = false }) 
                                 : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
                     })}
                 >
-                    <div style={{ padding: 32 }}>
-                        <p>Tabela de chips</p>
+                    <div style={{ padding: 32, maxHeight: 700, overflow: 'auto' }}>
                         {dataTable.length === 0 ? (
                             <div style={{ display: 'flex', justifyContent: 'center', padding: '5%', width: '100%' }}>
                                 <Alert severity="info">Sem dados para mostrar.</Alert>
@@ -210,7 +166,7 @@ export default function Orders({ dataTable = [], handleFiltro, basic = false }) 
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {dataTable.map((row) => (
+                                    {dataTable.length > 0 && dataTable.map((row) => (
                                         <TableRow key={row.name}>
                                             <TableCell>{row.name}</TableCell>
                                             <TableCell>{row.species}</TableCell>

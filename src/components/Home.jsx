@@ -81,7 +81,7 @@ function Home() {
           to="pg/volunteer"
           className={`${styles.circle} ${styles.circle_9}`}
         >
-          <Content title="Veterinário Voluntario" desc="Agenda" />
+          <Content title="Veterinário Voluntário" desc="Agenda" />
         </Link>
         <Link
           to="pg/zoonoses"

@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
@@ -13,11 +12,11 @@ export default function TableInsert({ handleDataTable }) {
     const [state, setState] = useState({
         name: '',
         species: '',
-        race: '',
         sex: '',
+        race: '',
         tutor: '',
         chip: '',
-        veterinary: 'Dr. Marcio',
+        veterinary: 'Dr. Marcio Albani',
         illnesses: '',
         address: '',
         image: '',

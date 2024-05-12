@@ -20,7 +20,7 @@ const pages = [
   { label: "Gatos", url: "cats" },
   { label: "Pet shops", url: "pets-shop" },
   { label: "Hospitais e clínicas", url: "hospitals" },
-  { label: "Veterinário Voluntario", url: "volunteer" },
+  { label: "Veterinário Voluntário", url: "volunteer" },
   { label: "Controle de zoonoses", url: "zoonoses" },
   { label: "Equipe", url: "contact" },
 ];
